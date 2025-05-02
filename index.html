@@ -50,93 +50,66 @@
           <img src="./images/Untitled.png" alt="types of triangle image" />
         </div>
         <div class="page-content">
-          Enter numbers to find which type of triangle it is.
+          Please enter the three lengths of your triangle.
         </div>
         <form>
-          <label>Side A: </label>
+          <label class="page-content">Side a: </label>
           <div class="mdl-textfield mdl-js-textfield">
-            <!-- input pattern attribute -->
             <input
               class="mdl-textfield__input"
               type="text"
               pattern="-?[0-9]*(\.[0-9]+)?"
-              id="sideA-number"
-              step="0.01"
+              id="side-a"
             />
-            <!-- mdl-textfield__label -->
-            <label class="mdl-textfield__label" for="sideA-number"
-              >Number here...</label
+            <label class="mdl-textfield__label" for="side-a"
+              >Enter without the unit</label
             >
-            <!-- class "mdl-textfield__error" -->
-            <span class="mdl-textfield__error">Input is not a number.</span>
+            <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
           <br />
-          <label>Side B: </label>
+          <label class="page-content">Side b: </label>
           <div class="mdl-textfield mdl-js-textfield">
-            <!-- input pattern attribute -->
             <input
               class="mdl-textfield__input"
               type="text"
               pattern="-?[0-9]*(\.[0-9]+)?"
-              id="sideB-number"
-              step="0.01"
+              id="side-b"
             />
-            <!-- mdl-textfield__label -->
-            <label class="mdl-textfield__label" for="sideB-number"
-              >Number here...</label
+            <label class="mdl-textfield__label" for="side-b"
+              >Enter without the unit</label
             >
-            <!-- class "mdl-textfield__error" -->
-            <span class="mdl-textfield__error">Input is not a number.</span>
+            <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
           <br />
-          <label>Side C: </label>
+          <label class="page-content">Side c: </label>
           <div class="mdl-textfield mdl-js-textfield">
-            <!-- input pattern attribute -->
             <input
               class="mdl-textfield__input"
               type="text"
               pattern="-?[0-9]*(\.[0-9]+)?"
-              id="sideC-number"
-              step="0.01"
+              id="side-c"
             />
-            <!-- mdl-textfield__label -->
-            <label class="mdl-textfield__label" for="sideC-number"
-              >Number here...</label
+            <label class="mdl-textfield__label" for="side-c"
+              >Enter without the unit</label
             >
-            <!-- class "mdl-textfield__error" -->
-            <span class="mdl-textfield__error">Input is not a number.</span>
+            <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
           <br />
-          <!-- https://www.w3schools.com/tags/tag_select.asp -->
-          <div class="mdl-textfield mdl-js-textfield">
-            <label for="days-number">Choose a number between 1 and 9 :</label>
-            <select class="mdl-textfield_input" id="days-number">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="6">8</option>
-              <option value="7">9</option>
-            </select>
-          </div>
-          <br />
-          <!-- Raised button with ripple -->
           <button
             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            onclick="findTypeOfTriangle()"
+            onclick="checkTypeOfTriangle ()"
             type="button"
           >
-            TRIANGLE TYPE
+            Check
           </button>
         </form>
         <br />
         <div class="page-content-answer">
-          <div id="result"></div>
+          <div id="answer"></div>
         </div>
       </main>
     </div>
   </body>
+
+
 </html>

@@ -1,46 +1,58 @@
-// Copyright (c) 2025 Shanea Jaromay All rights reserved
+// Copyright (c) 2025 Ain Jeong All rights reserved
 //
 // Created by: Shanea Jaromay
-// Created on: Apr 2025
+// Created on: May 2025
+
 // This file contains the JS functions for index.html
 
 
 /**
-* This function tells you if you get a student discount
+* This function check the type of triangle
 */
 // eslint-disable-next-line no-unused-vars
-
-
-function findTypeOfTriangle() {
+function checkTypeOfTriangle () {
  // input
-const lengthANumber = prompt("Enter length A of the triangle (mm):")
-const lengthBString = prompt("Enter length A of the triangle (mm):")
-const lengthCString = prompt("Enter length A of the triangle (mm):")
+const sideA = parseFloat(document.getElementById('side-a').value)
+const sideB = parseFloat(document.getElementById('side-b').value)
+const sideC = parseFloat(document.getElementById('side-c').value)
 
-const lengthA = parseFloat(lengthANumber)
-const lengthB = parseFloat(lengthBString)
-const lengthC = parseFloat(lengthCString)
 
-// using the cosine law
-const angleA = Math.acos((lengthB**2 + lengthC**2 - lengthA**2) / (2 * lengthB * lengthC)) * (180/Math.PI)
-const angleB = Math.acos((lengthC**2 + lengthA**2 - lengthB**2) / (2 * lengthC * lengthA)) * (180/Math.PI)
-const angleC = Math.acos((lengthA**2 + lengthB**2 - lengthC**2) / (2 * lengthA * lengthB)) * (180/Math.PI)
+ // using the cosine law
+const angleA =
+  Math.acos((sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)) *
+  (180 / Math.PI)
+const angleB =
+  Math.acos((sideC ** 2 + sideA ** 2 - sideB ** 2) / (2 * sideC * sideA)) *
+  (180 / Math.PI)
+const angleC =
+  Math.acos((sideA ** 2 + sideB ** 2 - sideC ** 2) / (2 * sideA * sideB)) *
+  (180 / Math.PI)
 
-const sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
 
-console.log(angleA)
-console.log(angleB)
-console.log(angleC)
-console.log(sumOfAngles)
+const sumOfAngles =
+  Number(angleA.toFixed(2)) +
+  Number(angleB.toFixed(2)) +
+  Number(angleC.toFixed(2))
 
- // process
-if (daysNumber === 'Tuesday' || daysNumber === 'Thursday' || (userAge > 12 && userAge < 21)) {
-   // output
-  document.getElementById('result').innerHTML =
-  "You get the student discount for the museum.";
+
+if (sumOfAngles === 180) {
+   // process
+  if (sideA === sideB && sideA === sideC && sideB === sideC) {
+    // output
+    document.getElementById('answer').innerHTML =
+      'This is an Equilateral Triangle.'
+  } else if (sideA === sideC || sideA === sideB || sideB === sideC) {
+    // output
+    document.getElementById('answer').innerHTML =
+      'This is an Isosceles Triangle.'
   } else {
-   // output
-  document.getElementById('result').innerHTML =
-  "You pay the regular price";
+    // output
+    document.getElementById('answer').innerHTML =
+      'This is a Scalene Triangle.'
+  }
+} else {
+  // output
+  document.getElementById('answer').innerHTML = 'This is not a triangle.'
+
   }
 }
